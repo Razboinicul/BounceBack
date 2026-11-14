@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://cl4iga21ujca5"]
+
+[ext_resource type="Script" uid="uid://dxnauukd7gju6" path="res://player.gd" id="1_xhfnw"]
+[ext_resource type="PackedScene" uid="uid://f2xxca3vnksf" path="res://Gun.tscn" id="2_kpjcp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fh7p3"]
+size = Vector2(50, 80)
+
+[node name="Player" type="CharacterBody2D" unique_id=705455276]
+script = ExtResource("1_xhfnw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2019940352]
+shape = SubResource("RectangleShape2D_fh7p3")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1557099382]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -25.0
+offset_top = -40.0
+offset_right = 25.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 0, 1, 1)
+
+[node name="G" type="Node2D" parent="." unique_id=699683013]
+
+[node name="Gun" parent="G" unique_id=826423263 instance=ExtResource("2_kpjcp")]
+position = Vector2(60, 0)
