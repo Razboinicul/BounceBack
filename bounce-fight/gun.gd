@@ -1,6 +1,6 @@
 extends Area2D
 
-var total_bullets = 100000 #PLEASE MODIFY IN-GAME
+var total_bullets = 99 #PLEASE MODIFY IN-GAME
 var can_shoot = true
 var bullet_pre = preload("res://bullet.tscn")
 

@@ -3,6 +3,7 @@ extends CharacterBody2D
 const SPEED = 300.0
 const JUMP_VELOCITY = -550.0
 
+var health = 100
 var jumped = false
 var fallheight = 0.0
 var cons_bounces = 0
