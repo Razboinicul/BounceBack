@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://ckb8xf3e0wu1n"]
 
+[ext_resource type="Script" uid="uid://gp1xrtsw5kaj" path="res://walker_en.gd" id="1_6jngr"]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fh7p3"]
 size = Vector2(50, 80)
 
@@ -7,6 +9,7 @@ size = Vector2(50, 80)
 size = Vector2(52, 82)
 
 [node name="WalkerEn" type="CharacterBody2D" unique_id=885652020]
+script = ExtResource("1_6jngr")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=467399542]
 offset_left = -25.0
@@ -23,3 +26,5 @@ debug_color = Color(0.8594014, 0.30148166, 0.527872, 0.41960785)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1622866999]
 shape = SubResource("RectangleShape2D_4uwfi")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

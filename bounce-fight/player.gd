@@ -16,11 +16,16 @@ var jump_h = 0.0
 var was_sliding = false
 var push_vel = 150
 var omit = true
+var can_damage = true
 
 func point_gun():
 	var ptr = get_global_mouse_position()
 	$G.look_at(ptr)
 
+func take_damage(pts: int): 
+	if can_damage:
+		health -= pts;can_damage = false
+		$DamageTimer.start()
 
 func _physics_process(delta: float) -> void:
 	point_gun()
@@ -52,7 +57,7 @@ func _physics_process(delta: float) -> void:
 		if not omit:
 			if not was_sliding:
 				if fallheight != 0:
-					cons_bounces += 1
+					pass #cons_bounces += 1
 				else:
 					cons_bounces = 0
 
@@ -89,9 +94,10 @@ func _physics_process(delta: float) -> void:
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-
 	was_sliding = sliding_wall
-	
 	print(velocity.x)
 
 	move_and_slide()
+
+func _on_damage_timer_timeout() -> void:
+	can_damage = true

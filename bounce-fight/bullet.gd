@@ -6,3 +6,8 @@ var dir
 func _ready() -> void: dir = Vector2.RIGHT.rotated(direction)
 func _physics_process(delta: float) -> void:
 	position += dir * vel * delta
+
+func _on_body_entered(body: Node2D) -> void:
+	if body is CharacterBody2D:
+		body.health -= 8
+	self.queue_free()

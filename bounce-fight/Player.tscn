@@ -29,4 +29,9 @@ color = Color(1, 0, 1, 1)
 [node name="G" type="Node2D" parent="." unique_id=699683013]
 
 [node name="Gun" parent="G" unique_id=826423263 instance=ExtResource("2_kpjcp")]
-position = Vector2(60, 0)
+position = Vector2(100, 0)
+
+[node name="DamageTimer" type="Timer" parent="." unique_id=360982845]
+wait_time = 4.0
+
+[connection signal="timeout" from="DamageTimer" to="." method="_on_damage_timer_timeout"]
