@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://cqfk3qsl4fw3x"]
+
+[ext_resource type="Script" uid="uid://c6eou6by8354j" path="res://exit.gd" id="1_vs230"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fh7p3"]
+size = Vector2(40, 70)
+
+[node name="Exit" type="Area2D" unique_id=484745194]
+script = ExtResource("1_vs230")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=122837372]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -35.0
+offset_right = 20.0
+offset_bottom = 35.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 0, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1775098733]
+shape = SubResource("RectangleShape2D_fh7p3")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

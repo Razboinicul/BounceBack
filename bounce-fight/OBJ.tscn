@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://dbf2wo0lld5k8"]
+
+[ext_resource type="Script" uid="uid://cvlb0igbrudcy" path="res://obj.gd" id="1_4g8vx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fh7p3"]
+
+[node name="Obj" type="StaticBody2D" unique_id=2091264104]
+script = ExtResource("1_4g8vx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1669091443]
+shape = SubResource("RectangleShape2D_fh7p3")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1924235005]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 10.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.28118682, 0.28118688, 0.28118682, 1)

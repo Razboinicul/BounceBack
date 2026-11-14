@@ -1,0 +1,150 @@
+[gd_scene format=3 uid="uid://27482p6wl7dd"]
+
+[ext_resource type="PackedScene" uid="uid://cl4iga21ujca5" path="res://Player.tscn" id="1_fftd3"]
+[ext_resource type="Script" uid="uid://c1i3yedt5ait4" path="res://tutorial_1.gd" id="1_yblwg"]
+[ext_resource type="PackedScene" uid="uid://dbf2wo0lld5k8" path="res://OBJ.tscn" id="2_2e102"]
+[ext_resource type="PackedScene" uid="uid://cqfk3qsl4fw3x" path="res://Exit.tscn" id="3_cqnwh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fh7p3"]
+size = Vector2(2560, 2)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4uwfi"]
+size = Vector2(2, 1440)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_loyi6"]
+size = Vector2(2560, 160)
+
+[sub_resource type="LabelSettings" id="LabelSettings_fh7p3"]
+font_size = 32
+
+[node name="Tutorial1" type="Node2D" unique_id=650005980]
+script = ExtResource("1_yblwg")
+
+[node name="Player" parent="." unique_id=705455276 instance=ExtResource("1_fftd3")]
+position = Vector2(400, 580)
+
+[node name="Borders" type="StaticBody2D" parent="." unique_id=1921964438]
+
+[node name="Top" type="CollisionShape2D" parent="Borders" unique_id=1788639818]
+shape = SubResource("RectangleShape2D_fh7p3")
+
+[node name="Bottom" type="CollisionShape2D" parent="Borders" unique_id=343316858]
+position = Vector2(0, 720)
+shape = SubResource("RectangleShape2D_fh7p3")
+
+[node name="Left" type="CollisionShape2D" parent="Borders" unique_id=1088103971]
+shape = SubResource("RectangleShape2D_4uwfi")
+
+[node name="Right" type="CollisionShape2D" parent="Borders" unique_id=1766790032]
+position = Vector2(1280, 0)
+shape = SubResource("RectangleShape2D_4uwfi")
+
+[node name="TopR" type="ColorRect" parent="Borders" unique_id=2099796536]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1280.0
+offset_top = -1.0
+offset_right = 1280.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BotR" type="ColorRect" parent="Borders" unique_id=1151532808]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1280.0
+offset_top = 719.0
+offset_right = 1280.0
+offset_bottom = 721.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LeftR" type="ColorRect" parent="Borders" unique_id=227667703]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1.0
+offset_top = -720.0
+offset_right = 1.0
+offset_bottom = 720.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RightR" type="ColorRect" parent="Borders" unique_id=448727941]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 1279.0
+offset_top = -720.0
+offset_right = 1281.0
+offset_bottom = 720.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GrounD" type="StaticBody2D" parent="." unique_id=1885335990]
+position = Vector2(0, 720)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GrounD" unique_id=478268612]
+shape = SubResource("RectangleShape2D_loyi6")
+
+[node name="ColorRect" type="ColorRect" parent="GrounD" unique_id=1954086365]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1280.0
+offset_top = -80.0
+offset_right = 1280.0
+offset_bottom = 80.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.60784316, 0, 1)
+
+[node name="OBJS" type="Node" parent="." unique_id=444137378]
+
+[node name="Obj1" parent="OBJS" unique_id=2091264104 instance=ExtResource("2_2e102")]
+size = Vector2(500, 80)
+pos = Vector2(880, 580)
+
+[node name="Exit" parent="OBJS/Obj1" unique_id=484745194 instance=ExtResource("3_cqnwh")]
+position = Vector2(30, -75)
+
+[node name="HELP" type="Control" parent="." unique_id=585892265]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_right = 1280.0
+offset_bottom = 720.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="HELP" unique_id=153990928]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -501.5
+offset_right = 501.5
+offset_bottom = 141.0
+grow_horizontal = 2
+text = "Use A/D or the left/right keys to move
+Use space or the up key to jump
+Get a feel for the game, and then proceed to the door to advance"
+label_settings = SubResource("LabelSettings_fh7p3")
+horizontal_alignment = 1
+
+[connection signal="player_exit" from="OBJS/Obj1/Exit" to="." method="_player_exit"]

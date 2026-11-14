@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://ckb8xf3e0wu1n"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fh7p3"]
+size = Vector2(50, 80)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4uwfi"]
+size = Vector2(52, 82)
+
+[node name="WalkerEn" type="CharacterBody2D" unique_id=885652020]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=467399542]
+offset_left = -25.0
+offset_top = -40.0
+offset_right = 25.0
+offset_bottom = 40.0
+color = Color(1, 0, 0, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1084758872]
+shape = SubResource("RectangleShape2D_fh7p3")
+debug_color = Color(0.8594014, 0.30148166, 0.527872, 0.41960785)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1380374711]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1622866999]
+shape = SubResource("RectangleShape2D_4uwfi")

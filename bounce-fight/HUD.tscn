@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://bglebn2qx6300"]
+
+[node name="Hud" type="Control" unique_id=870540341]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Health" type="ProgressBar" parent="." unique_id=1543921773]
+layout_mode = 0
+offset_top = 692.0
+offset_right = 220.0
+offset_bottom = 719.0
+rounded = true
+
+[node name="HealthLabel" type="Label" parent="." unique_id=38706107]
+layout_mode = 0
+offset_top = 669.0
+offset_right = 220.0
+offset_bottom = 692.0
+text = "Health"
+horizontal_alignment = 1
+
+[node name="AmmoLabel" type="Label" parent="." unique_id=508145116]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -62.0
+offset_top = -49.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Ammo
+000/000"
+horizontal_alignment = 1
