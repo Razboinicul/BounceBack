@@ -37,7 +37,7 @@ color = Color(1, 0, 1, 1)
 [node name="G" type="Node2D" parent="." unique_id=699683013]
 
 [node name="Gun" parent="G" unique_id=826423263 instance=ExtResource("2_kpjcp")]
-position = Vector2(100, 0)
+position = Vector2(80, 0)
 
 [node name="DamageTimer" type="Timer" parent="." unique_id=360982845]
 

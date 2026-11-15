@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cl4iga21ujca5" path="res://Player.tscn" id="1_bnydq"]
 [ext_resource type="PackedScene" uid="uid://cqfk3qsl4fw3x" path="res://Exit.tscn" id="2_52pfy"]
 [ext_resource type="PackedScene" uid="uid://dbf2wo0lld5k8" path="res://OBJ.tscn" id="3_5xhep"]
+[ext_resource type="Texture2D" uid="uid://cxtcelfne7yyv" path="res://ASSETS/IMG-20261115-WA0010.jpg" id="4_jx2qc"]
 [ext_resource type="PackedScene" uid="uid://ckb8xf3e0wu1n" path="res://RunnerEN.tscn" id="6_jrvqe"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jrvqe"]
@@ -90,13 +91,22 @@ offset_bottom = 720.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="GrounD" type="StaticBody2D" parent="." unique_id=1819139749]
+[node name="OBJS" type="Node" parent="." unique_id=1698215477]
+
+[node name="Exit" parent="OBJS" unique_id=484745194 instance=ExtResource("2_52pfy")]
+position = Vector2(1234, 603)
+
+[node name="Obj1" parent="OBJS" unique_id=2091264104 instance=ExtResource("3_5xhep")]
+size = Vector2(500, 80)
+pos = Vector2(300, 500)
+
+[node name="GrounD" type="StaticBody2D" parent="." unique_id=78794180]
 position = Vector2(0, 720)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="GrounD" unique_id=1501468801]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GrounD" unique_id=651405642]
 shape = SubResource("RectangleShape2D_o5kpb")
 
-[node name="ColorRect" type="ColorRect" parent="GrounD" unique_id=226709562]
+[node name="ColorRect" type="ColorRect" parent="GrounD" unique_id=318079789]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -110,14 +120,103 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0.60784316, 0, 1)
 
-[node name="OBJS" type="Node" parent="." unique_id=1698215477]
+[node name="Sprites" type="Node2D" parent="GrounD" unique_id=2024168225]
 
-[node name="Exit" parent="OBJS" unique_id=484745194 instance=ExtResource("2_52pfy")]
-position = Vector2(1234, 603)
+[node name="Img20261115Wa0011" type="Sprite2D" parent="GrounD/Sprites" unique_id=872773531]
+texture_filter = 1
+position = Vector2(114, -32)
+scale = Vector2(3, 3)
+texture = ExtResource("4_jx2qc")
 
-[node name="Obj1" parent="OBJS" unique_id=2091264104 instance=ExtResource("3_5xhep")]
-size = Vector2(500, 80)
-pos = Vector2(300, 500)
+[node name="Img20261115Wa0010" type="Sprite2D" parent="GrounD/Sprites" unique_id=399205111]
+texture_filter = 1
+position = Vector2(18, -32)
+scale = Vector2(3, 3)
+texture = ExtResource("4_jx2qc")
+
+[node name="Img20261115Wa0012" type="Sprite2D" parent="GrounD/Sprites" unique_id=1462393541]
+texture_filter = 1
+position = Vector2(306, -32)
+scale = Vector2(3, 3)
+texture = ExtResource("4_jx2qc")
+
+[node name="Img20261115Wa0013" type="Sprite2D" parent="GrounD/Sprites" unique_id=1775420417]
+texture_filter = 1
+position = Vector2(210, -32)
+scale = Vector2(3, 3)
+texture = ExtResource("4_jx2qc")
+
+[node name="Img20261115Wa0014" type="Sprite2D" parent="GrounD/Sprites" unique_id=1438262081]
+texture_filter = 1
+position = Vector2(498, -32)
+scale = Vector2(3, 3)
+texture = ExtResource("4_jx2qc")
+
+[node name="Img20261115Wa0015" type="Sprite2D" parent="GrounD/Sprites" unique_id=1248966847]
+texture_filter = 1
+position = Vector2(402, -32)
+scale = Vector2(3, 3)
+texture = ExtResource("4_jx2qc")
+
+[node name="Img20261115Wa0016" type="Sprite2D" parent="GrounD/Sprites" unique_id=1824918153]
+texture_filter = 1
+position = Vector2(690, -32)
+scale = Vector2(3, 3)
+texture = ExtResource("4_jx2qc")
+
+[node name="Img20261115Wa0017" type="Sprite2D" parent="GrounD/Sprites" unique_id=2049966467]
+texture_filter = 1
+position = Vector2(594, -32)
+scale = Vector2(3, 3)
+texture = ExtResource("4_jx2qc")
+
+[node name="Img20261115Wa0018" type="Sprite2D" parent="GrounD/Sprites" unique_id=1802957195]
+texture_filter = 1
+position = Vector2(882, -32)
+scale = Vector2(3, 3)
+texture = ExtResource("4_jx2qc")
+
+[node name="Img20261115Wa0019" type="Sprite2D" parent="GrounD/Sprites" unique_id=2016265077]
+texture_filter = 1
+position = Vector2(786, -32)
+scale = Vector2(3, 3)
+texture = ExtResource("4_jx2qc")
+
+[node name="Img20261115Wa0020" type="Sprite2D" parent="GrounD/Sprites" unique_id=1480315950]
+texture_filter = 1
+position = Vector2(1074, -32)
+scale = Vector2(3, 3)
+texture = ExtResource("4_jx2qc")
+
+[node name="Img20261115Wa0021" type="Sprite2D" parent="GrounD/Sprites" unique_id=1494211016]
+texture_filter = 1
+position = Vector2(978, -32)
+scale = Vector2(3, 3)
+texture = ExtResource("4_jx2qc")
+
+[node name="Img20261115Wa0022" type="Sprite2D" parent="GrounD/Sprites" unique_id=809118290]
+texture_filter = 1
+position = Vector2(1266, -32)
+scale = Vector2(3, 3)
+texture = ExtResource("4_jx2qc")
+
+[node name="Img20261115Wa0023" type="Sprite2D" parent="GrounD/Sprites" unique_id=1935976221]
+texture_filter = 1
+position = Vector2(1170, -32)
+scale = Vector2(3, 3)
+texture = ExtResource("4_jx2qc")
+
+[node name="Img20261115Wa0024" type="Sprite2D" parent="GrounD/Sprites" unique_id=229276437]
+texture_filter = 1
+position = Vector2(1458, -32)
+scale = Vector2(3, 3)
+texture = ExtResource("4_jx2qc")
+
+[node name="Img20261115Wa0025" type="Sprite2D" parent="GrounD/Sprites" unique_id=1582293096]
+texture_filter = 1
+position = Vector2(1362, -32)
+scale = Vector2(3, 3)
+texture = ExtResource("4_jx2qc")
 
 [node name="HELP" type="Control" parent="." unique_id=568530569]
 layout_mode = 3
@@ -155,5 +254,8 @@ position = Vector2(818, 483)
 player = NodePath("../../Player")
 
 [node name="Hud" parent="." unique_id=870540341 instance=ExtResource("1_52pfy")]
+
+[node name="Node" type="Node2D" parent="." unique_id=1298464631]
+position = Vector2(0, 576)
 
 [connection signal="player_exit" from="OBJS/Exit" to="." method="_on_exit_player_exit"]

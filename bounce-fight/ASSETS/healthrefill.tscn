@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://c47rlh2i710x6"]
+
+[ext_resource type="Script" uid="uid://tqvlu8qr3tbt" path="res://ASSETS/healthrefill.gd" id="1_nj21d"]
+[ext_resource type="Texture2D" uid="uid://c8f4mwxk6tnbw" path="res://ASSETS/boolet.png" id="2_mnkmu"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fh7p3"]
+radius = 14.0
+
+[node name="Healthrefill" type="Area2D" unique_id=1388549956]
+script = ExtResource("1_nj21d")
+
+[node name="Boolet" type="Sprite2D" parent="." unique_id=363932640]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("2_mnkmu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=214491280]
+shape = SubResource("CircleShape2D_fh7p3")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

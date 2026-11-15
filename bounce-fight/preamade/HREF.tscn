@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bty07wsgjrqh"]
+
+[ext_resource type="Texture2D" uid="uid://cxtcelfne7yyv" path="res://ASSETS/IMG-20261115-WA0010.jpg" id="1_my4gg"]
+[ext_resource type="PackedScene" uid="uid://c47rlh2i710x6" path="res://ASSETS/healthrefill.tscn" id="2_y0jky"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y0jky"]
+size = Vector2(32, 32)
+
+[node name="Href" type="Node2D" unique_id=2042051344]
+
+[node name="N1" type="StaticBody2D" parent="." unique_id=1875485077]
+position = Vector2(0, 36)
+
+[node name="Img20261115Wa0010" type="Sprite2D" parent="N1" unique_id=402116289]
+texture_filter = 1
+texture = ExtResource("1_my4gg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="N1" unique_id=814116989]
+shape = SubResource("RectangleShape2D_y0jky")
+
+[node name="Healthrefill" parent="." unique_id=1388549956 instance=ExtResource("2_y0jky")]
