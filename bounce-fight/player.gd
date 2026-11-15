@@ -3,6 +3,7 @@ extends CharacterBody2D
 const SPEED = 300.0
 const JUMP_VELOCITY = -550.0
 
+var fall_start_y = 0.0
 var health = 100
 var jumped = false
 var fallheight = 0.0
@@ -56,37 +57,40 @@ func _physics_process(delta: float) -> void:
 		else:
 			velocity += get_gravity() * normal_gravity_multiplier * delta
 
+# Track fall height
+	if not is_on_floor() and not sliding_wall:
+		fallheight = max(fallheight, position.y - fall_start_y)
+
 	# Landing and bouncing
 	if is_on_floor():
-		if not omit && not stop_bounce:
-			#if not was_sliding:
-			if fallheight != 0:
-				pass #cons_bounces += 1
-			else:
-				cons_bounces = 0
+		if not omit and not stop_bounce:
+			if fallheight > 0:
+				var gravity = get_gravity().y * normal_gravity_multiplier
+				var impact_velocity = sqrt(2.0 * gravity * fallheight)
 
-			if cons_bounces > 3:
-				velocity.y = 0
+				if cons_bounces > 3:
+					velocity.y = 0
+				else:
+					velocity.y = -impact_velocity * bounce_multiplier
+
+				cons_bounces += 1
 			else:
-				velocity.y = -abs(fallheight) * bounce_multiplier
+				velocity.y = 0
+				cons_bounces = 0
 		else:
 			omit = false
 			velocity.y = 0
-		stop_bounce = false
+
+		fall_start_y = position.y
 		fallheight = 0
 		jump_h = 0
-
-	# Track maximum fall height
-	if not is_on_floor() and not sliding_wall:
-		if fallheight < position.y:
-			fallheight = position.y
-
+		stop_bounce = false
 	# Jump
 	if Input.is_action_just_pressed("jump"):
 		if is_on_floor():
 			cons_bounces = 0
 			fallheight = 0
-			jump_h = position.y + JUMP_VELOCITY
+			fall_start_y = position.y
 			velocity.y = JUMP_VELOCITY
 			velocity.x = push_vel * -(slidewall)
 
@@ -99,7 +103,7 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 	was_sliding = sliding_wall
-	print(velocity.x)
+	#print(velocity.x)
 
 	move_and_slide()
 

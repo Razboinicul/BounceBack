@@ -47,7 +47,7 @@ func gen_s4():
 func gen_monst():
 	var num = rng.randi_range(2,4)
 	for _i in range(num):
-		var mt = rng.rand_weighted(PackedFloat32Array([0.3, 1]))
+		var mt = rng.rand_weighted(PackedFloat32Array([0.05, 1]))
 		var m = m1_pre.instantiate()
 		if mt == 0: m = m2_pre.instantiate()
 		else: m = m1_pre.instantiate()
@@ -55,18 +55,22 @@ func gen_monst():
 		m.player = $Player
 		$Enemies.add_child(m)
 
-#func gen_door():
-	#var door = $OBJS/Exit
-	#door.global_position = Vector2(s4_gen.x+rng.randi_range(0,s4_len-15), s4_gen.y-75)
+func gen_health():
+	var r = rng.randi_range(1, 8)
+	if r==2:
+		var h = health_preload.instantiate()
+		h.position = Vector2(rng.randi_range(20, 1200), rng.randi_range(20, 600))
+		$OBJS.add_child(h)
 
 func _ready() -> void:
-	#$Player.global_position = Vector2(randi_range(0, 1250), randi_range(15, 610))
+	Global.lvl += 1
+	$Player.health = Global.phealth
 	$Player.global_position = s3_gen+Vector2(50, 50)
 	gen_s1();gen_s2();gen_s3();gen_monst()
 
 func _process(delta: float) -> void:
-	$OBJS/Exit.active = false #$Enemies.get_children()==[]
+	$OBJS/Exit.active = $Enemies.get_children()==[]
 	$Hud.update_ui($Player.health, $Player/G/Gun.total_bullets)
 
 func _on_exit_player_exit() -> void:
-	get_tree().quit()
+	get_tree().change_scene_to_file("res://gen_level.tscn")

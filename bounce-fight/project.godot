@@ -15,11 +15,19 @@ run/main_scene="uid://h64cvf02mp3n"
 config/features=PackedStringArray("4.7", "Mobile")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Global="*uid://br2666k2vt8ew"
+
 [display]
 
 window/size/viewport_width=1280
 window/size/viewport_height=720
 window/stretch/mode="viewport"
+
+[global_group]
+
+ENEMY=""
 
 [input]
 

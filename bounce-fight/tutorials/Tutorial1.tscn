@@ -217,7 +217,7 @@ size = Vector2(500, 80)
 pos = Vector2(880, 580)
 
 [node name="Exit" parent="OBJS/Obj1" unique_id=484745194 instance=ExtResource("3_cqnwh")]
-position = Vector2(30, -75)
+position = Vector2(30, -50)
 
 [node name="HELP" type="Control" parent="." unique_id=585892265]
 layout_mode = 3
