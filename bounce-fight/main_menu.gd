@@ -2,6 +2,7 @@ extends Control
 
 var sel_button = 0
 var margins
+var first_press = true
 
 func _ready() -> void:
 	margins = [Vector2($VBoxContainer/Label.global_position.x, $VBoxContainer/Label.global_position.y), 
@@ -12,8 +13,14 @@ func _input(event: InputEvent) -> void:
 		sel_button = 1 if sel_button==0 else 0
 		print(sel_button)
 	if event.is_action_pressed("ui_accept"):
-		if sel_button == 0: get_tree().change_scene_to_file("res://tutorials/Tutorial1.tscn")
+		if sel_button == 0: 
+			Global.phealth=100;Global.lvl = 0
+			if not Global.did_tutorial: get_tree().change_scene_to_file("res://tutorials/Tutorial1.tscn")
+			else: get_tree().change_scene_to_file("res://tutorials/Tutorial1.tscn")
 		if sel_button == 1:
+			if Global.lines != [] && first_press:
+				$WHY.show()
+			first_press = false
 			var label = $VBoxContainer/Label
 			var pos = label.global_position - global_position
 			var w = label.size.x

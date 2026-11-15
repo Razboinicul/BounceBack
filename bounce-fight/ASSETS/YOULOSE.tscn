@@ -29,8 +29,20 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "YOU DED!
 
+
 PRESS ENTER TO RETRY
 PRESS ESCAPE TO GO TO MAIN MENU"
 label_settings = SubResource("LabelSettings_fh7p3")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="." unique_id=81153707]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Died 0 fights in. Cruel."
 horizontal_alignment = 1
 vertical_alignment = 1

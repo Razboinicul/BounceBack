@@ -64,6 +64,7 @@ func gen_health():
 
 func _ready() -> void:
 	Global.lvl += 1
+	$Hud.update_ui(Global.phealth, 0)
 	$Player.health = Global.phealth
 	$Player.global_position = s3_gen+Vector2(50, 50)
 	gen_s1();gen_s2();gen_s3();gen_monst()

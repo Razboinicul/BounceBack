@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="BounceFight"
-run/main_scene="uid://h64cvf02mp3n"
+run/main_scene="uid://fkqhoyta5v1n"
 config/features=PackedStringArray("4.7", "Mobile")
 config/icon="res://icon.svg"
 

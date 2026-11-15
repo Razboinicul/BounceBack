@@ -14,6 +14,9 @@ font_size = 32
 [sub_resource type="LabelSettings" id="LabelSettings_loyi6"]
 font_size = 32
 
+[sub_resource type="LabelSettings" id="LabelSettings_vlgea"]
+font_color = Color(0.28118682, 0.28118688, 0.28118682, 1)
+
 [node name="MainMenu" type="Control" unique_id=730792384]
 layout_mode = 3
 anchors_preset = 15
@@ -120,6 +123,17 @@ position = Vector2(999, 450.99997)
 rotation = -0.43633232
 scale = Vector2(2, 2)
 texture = ExtResource("4_iwfq2")
+
+[node name="WHY" type="Label" parent="." unique_id=1217531943]
+visible = false
+layout_mode = 0
+offset_left = 60.0
+offset_top = 460.0
+offset_right = 100.0
+offset_bottom = 483.0
+text = "if I'm not your daughter, you're not my mother.
+decide."
+label_settings = SubResource("LabelSettings_vlgea")
 
 [node name="Node2D" type="Node2D" parent="." unique_id=759882313]
 position = Vector2(210, 385)
