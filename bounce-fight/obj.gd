@@ -1,19 +1,18 @@
-extends StaticBody2D
+extends Node2D
 
 @export var size: Vector2 = Vector2.ZERO
 @export var pos: Vector2 = Vector2.ZERO
+@onready var original = get_node("N1")
 #@export var exitt: bool = true
 #@export var exit_x: int = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	$CollisionShape2D.shape.size = size
-	$ColorRect.size = size
-	$ColorRect.position = -(size/2)
-	#exit_x = min(max(exit_x, size.x), 0)
-	#$Exit.position = Vector2(0, 0)#pos.y-(pos.y/2))
-	#$Exit.visible = true #self.exitt
-	#$Exit.active = self.exitt
+	self.global_position = position
+	for i in range(1, int(size.x/32)):
+		var copy = original.duplicate()
+		copy.position.x = 32*i
+		add_child(copy)
 
 	self.global_position = pos
 

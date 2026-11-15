@@ -1,10 +1,11 @@
 [gd_scene format=3 uid="uid://cl4iga21ujca5"]
 
 [ext_resource type="Script" uid="uid://dxnauukd7gju6" path="res://player.gd" id="1_xhfnw"]
+[ext_resource type="Texture2D" uid="uid://ien4k474ihb8" path="res://ASSETS/mainchar.png" id="2_kne1u"]
 [ext_resource type="PackedScene" uid="uid://f2xxca3vnksf" path="res://Gun.tscn" id="2_kpjcp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fh7p3"]
-size = Vector2(50, 80)
+size = Vector2(50, 70)
 
 [node name="Player" type="CharacterBody2D" unique_id=705455276]
 script = ExtResource("1_xhfnw")
@@ -12,7 +13,14 @@ script = ExtResource("1_xhfnw")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2019940352]
 shape = SubResource("RectangleShape2D_fh7p3")
 
+[node name="Mainchar" type="Sprite2D" parent="." unique_id=2035660991]
+texture_filter = 1
+position = Vector2(0, -22)
+scale = Vector2(2, 2)
+texture = ExtResource("2_kne1u")
+
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1557099382]
+visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -32,6 +40,5 @@ color = Color(1, 0, 1, 1)
 position = Vector2(100, 0)
 
 [node name="DamageTimer" type="Timer" parent="." unique_id=360982845]
-wait_time = 4.0
 
 [connection signal="timeout" from="DamageTimer" to="." method="_on_damage_timer_timeout"]

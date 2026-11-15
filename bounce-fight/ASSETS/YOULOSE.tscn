@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://bn7shut25yd84"]
+
+[ext_resource type="Script" uid="uid://d3wqu6pp88uh8" path="res://ASSETS/youlose.gd" id="1_jf2t4"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_fh7p3"]
+font_size = 64
+
+[node name="Youlose" type="Control" unique_id=610755669]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jf2t4")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1600614460]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="." unique_id=457778728]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "YOU DED!
+
+PRESS ENTER TO RETRY
+PRESS ESCAPE TO GO TO MAIN MENU"
+label_settings = SubResource("LabelSettings_fh7p3")
+horizontal_alignment = 1
+vertical_alignment = 1

@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://b7o6uimmr7h8o"]
+
+[ext_resource type="Script" uid="uid://cvk706f5liidd" path="res://WALKER.gd" id="1_hksyj"]
+[ext_resource type="Texture2D" uid="uid://ta10fpxjac3k" path="res://ASSETS/gingermad.png" id="2_hksyj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fh7p3"]
+size = Vector2(100, 100)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tiexk"]
+size = Vector2(102, 102)
+
+[node name="WalkerEn" type="CharacterBody2D" unique_id=885652020]
+script = ExtResource("1_hksyj")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=467399542]
+visible = false
+offset_left = -25.0
+offset_top = -40.0
+offset_right = 25.0
+offset_bottom = 40.0
+color = Color(1, 0, 0, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1084758872]
+shape = SubResource("RectangleShape2D_fh7p3")
+debug_color = Color(0.8594014, 0.30148166, 0.527872, 0.41960785)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1380374711]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=282384126]
+shape = SubResource("RectangleShape2D_tiexk")
+debug_color = Color(0.73204213, 0.23304316, 0.99999994, 0.41960785)
+
+[node name="Gingermad" type="Sprite2D" parent="." unique_id=550617642]
+texture_filter = 1
+position = Vector2(-7, 3)
+scale = Vector2(2, 2)
+texture = ExtResource("2_hksyj")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

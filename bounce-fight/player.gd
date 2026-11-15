@@ -9,7 +9,7 @@ var fallheight = 0.0
 var cons_bounces = 0
 var sliding_wall = false
 var slidewall = 0
-var bounce_multiplier = 0.7
+var bounce_multiplier = 0.95
 var wall_gravity_multiplier = 0.3
 var normal_gravity_multiplier = 1.0
 var jump_h = 0.0
@@ -17,6 +17,7 @@ var was_sliding = false
 var push_vel = 150
 var omit = true
 var can_damage = true
+var stop_bounce = false
 
 func point_gun():
 	var ptr = get_global_mouse_position()
@@ -29,7 +30,9 @@ func take_damage(pts: int):
 
 func _physics_process(delta: float) -> void:
 	point_gun()
-
+	
+	if health <= 0: get_tree().change_scene_to_file("res://ASSETS/YOULOSE.tscn")
+	
 	# Wall detection
 	if is_on_wall():
 		sliding_wall = true
@@ -47,6 +50,7 @@ func _physics_process(delta: float) -> void:
 
 	# Gravity
 	if not is_on_floor():
+		if Input.is_action_pressed("stop"): stop_bounce = true
 		if sliding_wall:
 			velocity += get_gravity() * wall_gravity_multiplier * delta
 		else:
@@ -54,21 +58,21 @@ func _physics_process(delta: float) -> void:
 
 	# Landing and bouncing
 	if is_on_floor():
-		if not omit:
-			if not was_sliding:
-				if fallheight != 0:
-					pass #cons_bounces += 1
-				else:
-					cons_bounces = 0
+		if not omit && not stop_bounce:
+			#if not was_sliding:
+			if fallheight != 0:
+				pass #cons_bounces += 1
+			else:
+				cons_bounces = 0
 
-				if cons_bounces > 3:
-					velocity.y = 0
-				else:
-					velocity.y = -abs(fallheight) * bounce_multiplier
+			if cons_bounces > 3:
+				velocity.y = 0
+			else:
+				velocity.y = -abs(fallheight) * bounce_multiplier
 		else:
 			omit = false
 			velocity.y = 0
-
+		stop_bounce = false
 		fallheight = 0
 		jump_h = 0
 

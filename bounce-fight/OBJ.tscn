@@ -1,16 +1,16 @@
 [gd_scene format=3 uid="uid://dbf2wo0lld5k8"]
 
 [ext_resource type="Script" uid="uid://cvlb0igbrudcy" path="res://obj.gd" id="1_4g8vx"]
+[ext_resource type="Texture2D" uid="uid://cxtcelfne7yyv" path="res://ASSETS/IMG-20261115-WA0010.jpg" id="2_oq2kq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fh7p3"]
+size = Vector2(32, 32)
 
-[node name="Obj" type="StaticBody2D" unique_id=2091264104]
+[node name="Obj" type="Node2D" unique_id=297495687]
 script = ExtResource("1_4g8vx")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1669091443]
-shape = SubResource("RectangleShape2D_fh7p3")
-
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1924235005]
+visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -23,3 +23,12 @@ offset_bottom = 10.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.28118682, 0.28118688, 0.28118682, 1)
+
+[node name="N1" type="StaticBody2D" parent="." unique_id=1132564156]
+
+[node name="Img20261115Wa0010" type="Sprite2D" parent="N1" unique_id=2118463971]
+texture_filter = 1
+texture = ExtResource("2_oq2kq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="N1" unique_id=1669091443]
+shape = SubResource("RectangleShape2D_fh7p3")

@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cl4iga21ujca5" path="res://Player.tscn" id="1_bnydq"]
 [ext_resource type="PackedScene" uid="uid://cqfk3qsl4fw3x" path="res://Exit.tscn" id="2_52pfy"]
 [ext_resource type="PackedScene" uid="uid://dbf2wo0lld5k8" path="res://OBJ.tscn" id="3_5xhep"]
-[ext_resource type="PackedScene" uid="uid://ckb8xf3e0wu1n" path="res://WalkerEN.tscn" id="6_jrvqe"]
+[ext_resource type="PackedScene" uid="uid://ckb8xf3e0wu1n" path="res://RunnerEN.tscn" id="6_jrvqe"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jrvqe"]
 size = Vector2(2560, 2)
@@ -148,9 +148,11 @@ horizontal_alignment = 1
 [node name="Player" parent="." unique_id=705455276 instance=ExtResource("1_bnydq")]
 position = Vector2(250, 200)
 
-[node name="WalkerEn" parent="." unique_id=885652020 node_paths=PackedStringArray("player") instance=ExtResource("6_jrvqe")]
+[node name="Enemies" type="Node" parent="." unique_id=1080937809]
+
+[node name="WalkerEn" parent="Enemies" unique_id=885652020 node_paths=PackedStringArray("player") instance=ExtResource("6_jrvqe")]
 position = Vector2(818, 483)
-player = NodePath("../Player")
+player = NodePath("../../Player")
 
 [node name="Hud" parent="." unique_id=870540341 instance=ExtResource("1_52pfy")]
 

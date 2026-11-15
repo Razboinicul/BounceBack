@@ -1,0 +1,189 @@
+[gd_scene format=3 uid="uid://dckepsqfwy5uk"]
+
+[ext_resource type="Script" uid="uid://cnd3dd6jdilr5" path="res://ASSETS/health_bar.gd" id="1_f8ec5"]
+[ext_resource type="Texture2D" uid="uid://cb53alpstq8ry" path="res://ASSETS/fullheart.png" id="2_mc857"]
+[ext_resource type="Texture2D" uid="uid://yunasxswrs80" path="res://ASSETS/halfheart.png" id="3_h21rj"]
+[ext_resource type="Texture2D" uid="uid://f8gq5ysaa3cx" path="res://ASSETS/emptyheart.png" id="4_yhy3v"]
+
+[node name="HealthBar" type="Node2D" unique_id=41486448]
+scale = Vector2(1.35, 1.35)
+script = ExtResource("1_f8ec5")
+
+[node name="H1" type="Node2D" parent="." unique_id=2042782900]
+
+[node name="Fullheart" type="Sprite2D" parent="H1" unique_id=715518007]
+texture_filter = 1
+texture = ExtResource("2_mc857")
+
+[node name="Halfheart" type="Sprite2D" parent="H1" unique_id=235760433]
+visible = false
+texture_filter = 1
+texture = ExtResource("3_h21rj")
+flip_h = true
+
+[node name="Emptyheart" type="Sprite2D" parent="H1" unique_id=635336147]
+visible = false
+texture_filter = 1
+texture = ExtResource("4_yhy3v")
+
+[node name="H2" type="Node2D" parent="." unique_id=573656172]
+position = Vector2(20, 0)
+
+[node name="Fullheart" type="Sprite2D" parent="H2" unique_id=1945908160]
+texture_filter = 1
+texture = ExtResource("2_mc857")
+
+[node name="Halfheart" type="Sprite2D" parent="H2" unique_id=604653510]
+visible = false
+texture_filter = 1
+texture = ExtResource("3_h21rj")
+flip_h = true
+
+[node name="Emptyheart" type="Sprite2D" parent="H2" unique_id=1213050624]
+visible = false
+texture_filter = 1
+texture = ExtResource("4_yhy3v")
+
+[node name="H3" type="Node2D" parent="." unique_id=2065349097]
+position = Vector2(40, 0)
+
+[node name="Fullheart" type="Sprite2D" parent="H3" unique_id=265939858]
+texture_filter = 1
+texture = ExtResource("2_mc857")
+
+[node name="Halfheart" type="Sprite2D" parent="H3" unique_id=510458555]
+visible = false
+texture_filter = 1
+texture = ExtResource("3_h21rj")
+flip_h = true
+
+[node name="Emptyheart" type="Sprite2D" parent="H3" unique_id=835418238]
+visible = false
+texture_filter = 1
+texture = ExtResource("4_yhy3v")
+
+[node name="H4" type="Node2D" parent="." unique_id=763348824]
+position = Vector2(60, 0)
+
+[node name="Fullheart" type="Sprite2D" parent="H4" unique_id=994779134]
+texture_filter = 1
+texture = ExtResource("2_mc857")
+
+[node name="Halfheart" type="Sprite2D" parent="H4" unique_id=282060739]
+visible = false
+texture_filter = 1
+texture = ExtResource("3_h21rj")
+flip_h = true
+
+[node name="Emptyheart" type="Sprite2D" parent="H4" unique_id=1772516910]
+visible = false
+texture_filter = 1
+texture = ExtResource("4_yhy3v")
+
+[node name="H5" type="Node2D" parent="." unique_id=2083242745]
+position = Vector2(80, 0)
+
+[node name="Fullheart" type="Sprite2D" parent="H5" unique_id=2118767053]
+texture_filter = 1
+texture = ExtResource("2_mc857")
+
+[node name="Halfheart" type="Sprite2D" parent="H5" unique_id=433854565]
+visible = false
+texture_filter = 1
+texture = ExtResource("3_h21rj")
+flip_h = true
+
+[node name="Emptyheart" type="Sprite2D" parent="H5" unique_id=136268522]
+visible = false
+texture_filter = 1
+texture = ExtResource("4_yhy3v")
+
+[node name="H6" type="Node2D" parent="." unique_id=2031810553]
+position = Vector2(0, 20)
+
+[node name="Fullheart" type="Sprite2D" parent="H6" unique_id=1029933697]
+texture_filter = 1
+texture = ExtResource("2_mc857")
+
+[node name="Halfheart" type="Sprite2D" parent="H6" unique_id=693900408]
+visible = false
+texture_filter = 1
+texture = ExtResource("3_h21rj")
+flip_h = true
+
+[node name="Emptyheart" type="Sprite2D" parent="H6" unique_id=1663141662]
+visible = false
+texture_filter = 1
+texture = ExtResource("4_yhy3v")
+
+[node name="H7" type="Node2D" parent="." unique_id=2020630667]
+position = Vector2(20, 20)
+
+[node name="Fullheart" type="Sprite2D" parent="H7" unique_id=557619037]
+texture_filter = 1
+texture = ExtResource("2_mc857")
+
+[node name="Halfheart" type="Sprite2D" parent="H7" unique_id=1925973632]
+visible = false
+texture_filter = 1
+texture = ExtResource("3_h21rj")
+flip_h = true
+
+[node name="Emptyheart" type="Sprite2D" parent="H7" unique_id=1824753846]
+visible = false
+texture_filter = 1
+texture = ExtResource("4_yhy3v")
+
+[node name="H8" type="Node2D" parent="." unique_id=1982001514]
+position = Vector2(40, 20)
+
+[node name="Fullheart" type="Sprite2D" parent="H8" unique_id=320524229]
+texture_filter = 1
+texture = ExtResource("2_mc857")
+
+[node name="Halfheart" type="Sprite2D" parent="H8" unique_id=1945261089]
+visible = false
+texture_filter = 1
+texture = ExtResource("3_h21rj")
+flip_h = true
+
+[node name="Emptyheart" type="Sprite2D" parent="H8" unique_id=1099905771]
+visible = false
+texture_filter = 1
+texture = ExtResource("4_yhy3v")
+
+[node name="H9" type="Node2D" parent="." unique_id=498938122]
+position = Vector2(60, 20)
+
+[node name="Fullheart" type="Sprite2D" parent="H9" unique_id=129132938]
+texture_filter = 1
+texture = ExtResource("2_mc857")
+
+[node name="Halfheart" type="Sprite2D" parent="H9" unique_id=467339118]
+visible = false
+texture_filter = 1
+texture = ExtResource("3_h21rj")
+flip_h = true
+
+[node name="Emptyheart" type="Sprite2D" parent="H9" unique_id=478471009]
+visible = false
+texture_filter = 1
+texture = ExtResource("4_yhy3v")
+
+[node name="H10" type="Node2D" parent="." unique_id=1222177281]
+position = Vector2(80, 20)
+
+[node name="Fullheart" type="Sprite2D" parent="H10" unique_id=1570577022]
+texture_filter = 1
+texture = ExtResource("2_mc857")
+
+[node name="Halfheart" type="Sprite2D" parent="H10" unique_id=207606645]
+visible = false
+texture_filter = 1
+texture = ExtResource("3_h21rj")
+flip_h = true
+
+[node name="Emptyheart" type="Sprite2D" parent="H10" unique_id=10231456]
+visible = false
+texture_filter = 1
+texture = ExtResource("4_yhy3v")
