@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://d3wqu6pp88uh8" path="res://ASSETS/youlose.gd" id="1_jf2t4"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_fh7p3"]
-font_size = 64
+font_size = 60
 
 [node name="Youlose" type="Control" unique_id=610755669]
 layout_mode = 3
@@ -31,7 +31,7 @@ text = "YOU DED!
 
 
 PRESS ENTER TO RETRY
-PRESS ESCAPE TO GO TO MAIN MENU"
+PRESS BACKSPACE TO GO TO MAIN MENU"
 label_settings = SubResource("LabelSettings_fh7p3")
 horizontal_alignment = 1
 vertical_alignment = 1
